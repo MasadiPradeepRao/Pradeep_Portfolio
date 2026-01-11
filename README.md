@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website showcasing my work as a Telecommunication Systems graduate with expertise in cloud technologies, full-stack development, and embedded systems.
 
-## 🔗 Live Demo-(https://masadipradeeprao.github.io/Pradeep_Portfolio/#about)
+## 🔗 Live Demo-(https://masadipradeeprao.github.io/Pradeep_Portfolio/)
 
 ## ✨ Features
 

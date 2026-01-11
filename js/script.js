@@ -6,6 +6,25 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- Safe Storage Wrapper ---
+    const storage = {
+        getItem: (key) => {
+            try {
+                return localStorage.getItem(key);
+            } catch (e) {
+                console.warn('Storage access failed:', e);
+                return null;
+            }
+        },
+        setItem: (key, value) => {
+            try {
+                localStorage.setItem(key, value);
+            } catch (e) {
+                console.warn('Storage write failed:', e);
+            }
+        }
+    };
+
     // --- Language Translation Logic ---
     const content = {
         en: {
@@ -153,11 +172,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Persist selection
-        localStorage.setItem('language', lang);
+        storage.setItem('language', lang);
     };
 
     // Initialize Language
-    const savedLang = localStorage.getItem('language') || 'en'; // Default to English
+    const savedLang = storage.getItem('language') || 'en'; // Default to English
     switchLanguage(savedLang);
 
     // Event Listeners for Buttons
@@ -416,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const icon = themeToggle.querySelector('i');
 
         // Check Local Storage or System Preference
-        const savedTheme = localStorage.getItem('theme');
+        const savedTheme = storage.getItem('theme');
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
         if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
@@ -436,13 +455,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     icon.classList.remove('fa-moon');
                     icon.classList.add('fa-sun');
                 }
-                localStorage.setItem('theme', 'dark');
+                storage.setItem('theme', 'dark');
             } else {
                 if (icon) {
                     icon.classList.remove('fa-sun');
                     icon.classList.add('fa-moon');
                 }
-                localStorage.setItem('theme', 'light');
+                storage.setItem('theme', 'light');
             }
         });
     }

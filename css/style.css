@@ -17,6 +17,8 @@
     /* Hover Accent */
     --accent-dim: rgba(199, 167, 108, 0.1);
     /* Subtle accent tint */
+    --accent-text: #8a6a34;
+    /* Darker Gold for Text Accessibility (WCAG AA) */
 
     /* Backgrounds */
     --bg-color: #FFFFFF;
@@ -64,6 +66,24 @@ body {
     overflow-x: hidden;
 }
 
+/* Skip Link for Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 8px 16px;
+    z-index: 9999;
+    transition: top 0.3s ease;
+    border-radius: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 /* Utilities */
 .glass-effect {
     background: var(--glass-bg);
@@ -73,7 +93,7 @@ body {
 }
 
 .text-gradient {
-    color: var(--accent-color);
+    color: var(--accent-text);
 }
 
 .hover-lift {
@@ -197,7 +217,7 @@ img {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--accent-color);
+    color: var(--accent-text);
 }
 
 .nav-links a:hover::after,
@@ -241,7 +261,7 @@ img {
 
 .lang-btn.active {
     background-color: var(--white);
-    color: var(--accent-color);
+    color: var(--accent-text);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -359,7 +379,7 @@ img {
 .btn-primary:hover {
     background: var(--accent-color);
     border-color: var(--accent-color);
-    color: var(--white);
+    color: var(--primary-color);
     box-shadow: 0 6px 20px rgba(199, 167, 108, 0.25);
     transform: translateY(-2px);
 }
@@ -653,7 +673,7 @@ img {
 
 .timeline-content .company {
     font-weight: 600;
-    color: var(--accent-color);
+    color: var(--accent-text);
     display: block;
     margin-bottom: 5px;
     font-size: 1.1rem;
@@ -757,7 +777,7 @@ img {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--accent-color);
+    color: var(--accent-text);
     font-weight: 600;
     font-size: 0.95rem;
 }
@@ -914,6 +934,12 @@ img {
     background-color: #f8fafc;
 }
 
+#contact-form textarea {
+    resize: none !important;
+    height: 150px;
+    overflow-y: auto;
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
@@ -1032,7 +1058,11 @@ body.dark-mode {
     --section-bg-alt: #151515;
     --white: #252525;
     --text-color: #B0B0B0;
+    --white: #252525;
+    --text-color: #B0B0B0;
     --text-light: #888888;
+    --accent-text: #C7A76C;
+    /* Keep original lighter gold for dark mode */
     --glass-bg: rgba(18, 18, 18, 0.9);
     --glass-border: 1px solid rgba(255, 255, 255, 0.05);
     --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);

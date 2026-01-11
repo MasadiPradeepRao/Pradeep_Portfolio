@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Pradeep Rao Masadi - Telecommunication Systems Master’s Graduate">
+    <title>Pradeep Rao Masadi | Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Devicon -->
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome for Icons (Optional but good for contact/skills) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#hero" class="logo">Pradeep Rao Masadi</a>
+
+            <ul class="nav-links">
+                <li><a href="#about" data-lang="nav-about">About</a></li>
+                <li><a href="#skills" data-lang="nav-skills">Skills</a></li>
+                <li><a href="#experience" data-lang="nav-experience">Experience</a></li>
+                <li><a href="#projects" data-lang="nav-projects">Projects</a></li>
+                <li><a href="#education" data-lang="nav-education">Education</a></li>
+                <li><a href="#contact" data-lang="nav-contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang-val="en" aria-label="English">
+                        <img src="assets/images/flag-en.png" alt="EN" class="flag-icon">
+                    </button>
+                    <button class="lang-btn" data-lang-val="sv" aria-label="Swedish">
+                        <img src="assets/images/flag-sv.png" alt="SV" class="flag-icon">
+                    </button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <header id="hero" class="hero-section">
+        <div class="hero-bg-graphic">
+            <!-- Minimal Geometric Pattern -->
+            <svg width="100%" height="100%" viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                        <circle cx="2" cy="2" r="1.5" fill="#e5e5e5" />
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" opacity="0.4" />
+                <circle cx="90%" cy="20%" r="300" fill="rgba(199, 167, 108, 0.03)" />
+                <circle cx="10%" cy="90%" r="200" fill="rgba(199, 167, 108, 0.05)" />
+            </svg>
+        </div>
+
+        <div class="container hero-container">
+            <div class="hero-content">
+                <p class="hero-greeting text-gradient">Hello, I'm</p>
+                <h1 class="hero-title">
+                    <span class="hero-name-full">Pradeep Rao Masadi</span>
+                </h1>
+                <h2 class="hero-subtitle" data-lang="hero-subtitle">Telecommunication Systems Master’s Graduate</h2>
+                <p class="hero-description" data-lang="hero-desc">
+                    Passionate about Telecom, Cloud, DevOps, and Simulation technologies.
+                    Ready to build the future of connected systems.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary hover-lift" data-lang="hero-btn-projects">View
+                        Projects</a>
+                    <a href="assets/images/PRADEEP_CV.pdf" download="Pradeep_Rao_Masadi_Resume" target="_blank"
+                        class="btn btn-secondary hover-lift" data-lang="hero-btn-resume">Download Resume/CV</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper glass-effect">
+                <img src="assets/images/profile.png" alt="Pradeep Rao Masadi" class="hero-profile-img">
+            </div>
+        </div>
+
+        <div class="scroll-down-indicator">
+            <div class="mouse"></div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section-title" data-lang="about-title">About Me</h2>
+            <div class="about-content">
+                <p data-lang="about-p1">
+                    I am a dedicated Telecommunication Systems graduate with a strong foundation in both software
+                    development and network engineering.
+                    My academic journey has equipped me with deep knowledge in wireless communications, while my
+                    hands-on experience spans cloud technologies, full-stack development, and embedded systems.
+                </p>
+                <p>
+                    <strong data-lang="about-interests-label">Career Interests:</strong> <span
+                        data-lang="about-interests-list">Telecom, Cloud Computing, DevOps, Network Simulation, and
+                        Software Development.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <h2 class="section-title" data-lang="skills-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <!-- Programming Languages -->
+                <div class="skill-card">
+                    <h3 data-lang="skills-prog">Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span><i class="devicon-java-plain colored"></i> Java</span>
+                        <span><i class="devicon-c-plain colored"></i> C</span>
+                        <span><i class="devicon-python-plain colored"></i> Python</span>
+                        <span><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                        <span><i class="devicon-mysql-plain colored"></i> SQL</span>
+                        <span><i class="devicon-html5-plain colored"></i> HTML</span>
+                        <span><i class="devicon-css3-plain colored"></i> CSS</span>
+                    </div>
+                </div>
+                <!-- Cloud & DevOps -->
+                <div class="skill-card">
+                    <h3 data-lang="skills-cloud">Cloud & DevOps</h3>
+                    <div class="skill-tags">
+                        <span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS</span>
+                        <span><i class="devicon-azure-plain colored"></i> Azure</span>
+                        <span><i class="devicon-openstack-plain colored"></i> OpenStack</span>
+                        <span><i class="devicon-linux-plain colored"></i> Linux</span>
+                        <span><i class="devicon-git-plain colored"></i> Git</span>
+                        <span><i class="devicon-nginx-plain colored"></i> Nginx</span>
+                        <span>HAProxy</span>
+                        <span><i class="devicon-prometheus-original colored"></i> Prometheus</span>
+                        <span><i class="devicon-grafana-original colored"></i> Grafana</span>
+                    </div>
+                </div>
+                <!-- Machine Learning -->
+                <div class="skill-card">
+                    <h3 data-lang="skills-ml">Machine Learning</h3>
+                    <div class="skill-tags">
+                        <span><i class="devicon-tensorflow-original colored"></i> TensorFlow</span>
+                        <span><i class="devicon-pytorch-original colored"></i> PyTorch</span>
+                        <span>CNN</span>
+                        <span>LSTM</span>
+                        <span>Genetic Algorithms</span>
+                        <span><i class="devicon-numpy-plain colored"></i> NumPy</span>
+                    </div>
+                </div>
+                <!-- Telecom & Simulation -->
+                <div class="skill-card">
+                    <h3 data-lang="skills-telecom">Telecom & Simulation</h3>
+                    <div class="skill-tags">
+                        <span><i class="devicon-matlab-plain colored"></i> MATLAB</span>
+                        <span>Simulink</span>
+                        <span>QuaDRiGa</span>
+                        <span>MIMO Systems</span>
+                        <span>5G Tools</span>
+                    </div>
+                </div>
+                <!-- Embedded & Networking -->
+                <div class="skill-card">
+                    <h3 data-lang="skills-embedded">Embedded & Networking</h3>
+                    <div class="skill-tags">
+                        <span><i class="devicon-arduino-plain colored"></i> Arduino</span>
+                        <span>VLSI</span>
+                        <span>Cisco Packet Tracer</span>
+                        <span>MQTT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience-section">
+        <div class="container">
+            <h2 class="section-title" data-lang="experience-title">Experience</h2>
+            <div class="timeline">
+
+                <!-- Experience Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Full Stack Developer Intern</h3>
+                        <span class="company">AbsolveIT</span>
+                        <span class="date">Jan 2025 – Apr 2025</span>
+                        <ul class="job-details">
+                            <li data-lang="exp-job1-1">Worked on frontend & backend development to build scalable web
+                                applications.</li>
+                            <li data-lang="exp-job1-2">Implemented REST APIs using Flask and managed database
+                                integrations.</li>
+                            <li data-lang="exp-job1-3">Assisted in Cloud deployment processes and CI/CD pipeline
+                                configurations.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Embedded Systems Intern</h3>
+                        <span class="company">Cerium Systems</span>
+                        <span class="date">Jun 2022 – Aug 2022</span>
+                        <ul class="job-details">
+                            <li data-lang="exp-job2-1">Developed Embedded C/C++ applications for IoT solutions.</li>
+                            <li data-lang="exp-job2-2">Optimized firmware for better power consumption and performance.
+                            </li>
+                            <li data-lang="exp-job2-3">Created Python scripts for test automation and validation.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2 class="section-title" data-lang="projects-title">Projects</h2>
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3>5G Massive MIMO Beamforming Optimization</h3>
+                    <p class="project-desc" data-lang="proj-1-desc">Optimized beamforming strategies for 5G networks
+                        using deep learning
+                        techniques.</p>
+                    <p class="project-tech"><strong>Tech:</strong> MATLAB, CNN, LSTM, Genetic Algorithms</p>
+                    <a href="https://bth.diva-portal.org/smash/record.jsf?pid=diva2%3A1930019&dswid=-5614"
+                        class="project-link" data-lang="btn-view-pub"><i class=""></i> View
+                        Publication</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>Automated Cloud Service Deployment</h3>
+                    <p class="project-desc" data-lang="proj-2-desc">Implemented automated deployment pipelines for cloud
+                        services using
+                        OpenStack.</p>
+                    <p class="project-tech"><strong>Tech:</strong> Linux, OpenStack, Prometheus, Grafana</p>
+                    <a href="https://github.com/MasadiPradeepRao/NSO-A.2" class="project-link"
+                        data-lang="btn-view-project"><i class="fab fa-github"></i> View
+                        Project</a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3>Smart Device for Visually Impaired</h3>
+                    <p class="project-desc" data-lang="proj-3-desc">Designed an IoT-based assistive device to help
+                        visually impaired individuals
+                        navigate.</p>
+                    <p class="project-tech"><strong>Tech:</strong> Arduino, Python</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education-section">
+        <div class="container">
+            <h2 class="section-title" data-lang="education-title">Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3 data-lang="edu-msc">M.Sc in Telecommunication Systems</h3>
+                    <p class="school">Blekinge Institute of Technology, Sweden</p>
+                </div>
+                <div class="education-card">
+                    <h3 data-lang="edu-btech">B.Tech in Electronics & Communication Engineering</h3>
+                    <p class="school">JNTU Hyderabad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications & Certifications -->
+    <section class="section">
+        <div class="container split-section">
+            <div class="column">
+                <h2 class="section-title" data-lang="publication-title">Publications</h2>
+                <ul class="list-items">
+                    <li>
+                        <strong>Design and Optimization of Massive MIMO Systems for 5G Networks</strong><br>
+                        <span class="sub-text">Published Jan 2025</span>
+                        <a href="https://bth.diva-portal.org/smash/record.jsf?pid=diva2%3A1930019&dswid=-3812"
+                            target="_blank" class="btn-xs" data-lang="btn-show-pub">Show Publication</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2 class="section-title" data-lang="certification-title">Certifications</h2>
+                <ul class="list-items">
+                    <li>
+                        <span>Machine Learning Pipelines with Azure ML Studio (Coursera)</span><br>
+                        <a href="https://coursera.org/share/3db84cf249e5388ae8899e80dfd7d612" target="_blank"
+                            class="btn-xs" data-lang="btn-show-cert">Show Certificate</a>
+                    </li>
+                    <li>
+                        <span>IoT and Embedded Systems – UC Irvine</span><br>
+                        <a href="https://coursera.org/share/fa8e02c1f90f1ba80e4930492e2e2c03" target="_blank"
+                            class="btn-xs" data-lang="btn-show-cert">Show Certificate</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title" data-lang="contact-title">Contact Me</h2>
+            <div class="contact-content-wrapper">
+                <div class="contact-form-container">
+                    <form id="contact-form" action="https://formspree.io/f/mjggbpoz" method="POST">
+                        <div class="form-group">
+                            <label for="name" data-lang="label-name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your Name"
+                                data-lang-placeholder="ph-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-lang="label-email">Email ID</label>
+                            <input type="email" id="email" name="email" required placeholder="Your Email"
+                                data-lang-placeholder="ph-email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-lang="label-message">Message</label>
+                            <textarea id="message" name="message" rows="5" maxlength="5000" required
+                                placeholder="Your Message (Max 1000 words)"
+                                data-lang-placeholder="ph-message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary contact-submit" data-lang="btn-send">Send
+                            Message</button>
+                        <p id="contact-status" class="contact-status"></p>
+                    </form>
+                </div>
+                <div class="social-links">
+                    <!-- Social links are moved or can stay alongside -->
+                    <a href="mailto:masadipradeep77@gmail.com" class="social-btn"><i class="fas fa-envelope"></i>
+                        Email</a>
+                    <a href="https://www.linkedin.com/in/pradeep-rao-masadi/" target="_blank" class="social-btn"><i
+                            class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/MasadiPradeepRao" target="_blank" class="social-btn"><i
+                            class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Pradeep Rao Masadi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

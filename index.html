@@ -165,21 +165,51 @@
         <div class="container">
             <h2 class="section-title" data-lang="skills-title">Skills & Technologies</h2>
             <div class="skills-grid">
-                <!-- Cloud & DevOps -->
+                <!-- Frontend -->
                 <div class="skill-card">
-                    <h3 data-lang="skills-cloud">☁️ Cloud & DevOps</h3>
+                    <h3 data-lang="skills-frontend">🎨 Frontend</h3>
                     <div class="skill-tags">
-                        <span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS</span>
-                        <!-- <span><i class="devicon-azure-plain colored"></i> Azure</span> -->
+                        <span><i class="devicon-react-original colored"></i> React</span>
+                        <span><i class="devicon-nextjs-plain colored"></i> Next.js (App Router)</span>
+                        <span><i class="devicon-typescript-plain colored"></i> TypeScript</span>
+                        <span><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</span>
+                        <span>State Management</span>
+                        <span>Client & Server Components</span>
+                    </div>
+                </div>
+                <!-- Backend / Database -->
+                <div class="skill-card">
+                    <h3 data-lang="skills-backend">🖥️ Backend / Database</h3>
+                    <div class="skill-tags">
+                        <span><i class="devicon-supabase-plain colored"></i> Supabase</span>
+                        <span><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
+                        <span>RLS (Row Level Security)</span>
+                        <span>Server Actions</span>
+                        <span>Server-side Fetching</span>
+                        <span>API Design</span>
+                    </div>
+                </div>
+                <!-- Authentication & Security -->
+                <div class="skill-card">
+                    <h3 data-lang="skills-auth">🔐 Authentication & Security</h3>
+                    <div class="skill-tags">
+                        <span>Supabase Auth</span>
+                        <span>JWT Sessions</span>
+                        <span>RBAC (Role-Based Access Control)</span>
+                        <span>Service Role Management</span>
+                        <span>Secure Data Masking</span>
+                    </div>
+                </div>
+                <!-- Deployment & DevOps -->
+                <div class="skill-card">
+                    <h3 data-lang="skills-deployment">🚀 Deployment</h3>
+                    <div class="skill-tags">
+                        <span><i class="devicon-vercel-original colored"></i> Vercel</span>
+                        <span>Environment Management</span>
                         <span><i class="devicon-git-plain colored"></i> Git</span>
                         <span><i class="devicon-docker-plain colored"></i> Docker</span>
-                        <span><i class="devicon-openstack-plain colored"></i> OpenStack</span>
-                        <span><i class="devicon-kubernetes-plain colored"></i> Kubernetes</span>
-                        <span><i class="devicon-linux-plain colored"></i> Linux</span>
-                        <span><i class="devicon-terraform-plain colored"></i> Terraform</span>
-                        <span><i class="devicon-jenkins-line colored"></i> Jenkins</span>
-                        <span><i class="devicon-nginx-plain colored"></i> Nginx</span>
-                        <span>HAProxy</span>
+                        <span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS</span>
+                        <span>CI/CD Pipelines</span>
                     </div>
                 </div>
                 <!-- Programming Languages -->
@@ -192,8 +222,19 @@
                         <span><i class="devicon-javascript-plain colored"></i> JavaScript</span>
                         <span><i class="devicon-mysql-plain colored"></i> SQL</span>
                         <span><i class="devicon-bash-plain colored"></i> Bash/Shell</span>
-                        <span><i class="devicon-html5-plain colored"></i> HTML</span>
-                        <span><i class="devicon-css3-plain colored"></i> CSS</span>
+                    </div>
+                </div>
+                <!-- Cloud & Infrastructure -->
+                <div class="skill-card">
+                    <h3 data-lang="skills-cloud">☁️ Cloud & Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span><i class="devicon-openstack-plain colored"></i> OpenStack</span>
+                        <span><i class="devicon-kubernetes-plain colored"></i> Kubernetes</span>
+                        <span><i class="devicon-linux-plain colored"></i> Linux</span>
+                        <span><i class="devicon-terraform-plain colored"></i> Terraform</span>
+                        <span><i class="devicon-jenkins-line colored"></i> Jenkins</span>
+                        <span><i class="devicon-nginx-plain colored"></i> Nginx</span>
+                        <span>HAProxy</span>
                     </div>
                 </div>
                 <!-- Telecom & Simulation -->
@@ -201,10 +242,9 @@
                     <h3 data-lang="skills-telecom">📡 Telecom & Simulation</h3>
                     <div class="skill-tags">
                         <span><i class="devicon-matlab-plain colored"></i> MATLAB</span>
-                        <span><i class="devicon-matlab-plain colored"></i>Simulink</span>
+                        <span><i class="devicon-matlab-plain colored"></i> Simulink</span>
                         <span>QuaDRiGa</span>
                         <span>MIMO Systems</span>
-                        <!--<span>5G Tools</span>-->
                         <span>Network Protocols</span>
                     </div>
                 </div>
@@ -215,19 +255,8 @@
                         <span><i class="devicon-tensorflow-original colored"></i> TensorFlow</span>
                         <span><i class="devicon-pytorch-original colored"></i> PyTorch</span>
                         <span><i class="devicon-numpy-plain colored"></i> NumPy</span>
-                        <span>CNN</span>
-                        <span>LSTM</span>
+                        <span>CNN / LSTM</span>
                         <span>Genetic Algorithms</span>
-                    </div>
-                </div>
-                <!-- Embedded & IoT -->
-                <div class="skill-card">
-                    <h3 data-lang="skills-embedded">⚙️ Embedded & IoT</h3>
-                    <div class="skill-tags">
-                        <span><i class="devicon-arduino-plain colored"></i> Arduino</span>
-                        <span>C/C++ Embedded</span>
-                        <!--<span>MQTT</span>-->
-                        <span>Sensor Integration</span>
                     </div>
                 </div>
                 <!-- Monitoring & Observability -->
@@ -237,6 +266,15 @@
                         <span><i class="devicon-prometheus-original colored"></i> Prometheus</span>
                         <span><i class="devicon-grafana-plain colored"></i> Grafana</span>
                         <span>CloudWatch</span>
+                    </div>
+                </div>
+                <!-- Embedded & IoT -->
+                <div class="skill-card">
+                    <h3 data-lang="skills-embedded">⚙️ Embedded & IoT</h3>
+                    <div class="skill-tags">
+                        <span><i class="devicon-arduino-plain colored"></i> Arduino</span>
+                        <span>C/C++ Embedded</span>
+                        <span>Sensor Integration</span>
                     </div>
                 </div>
             </div>
@@ -300,6 +338,24 @@
         <div class="container">
             <h2 class="section-title" data-lang="projects-title">Projects</h2>
             <div class="projects-grid">
+
+                <!-- Featured Project: Hourlog -->
+                <div class="project-card">
+                    <h3>Hourlog - Time Tracker App</h3>
+                    <p class="project-desc" data-lang="proj-hourlog-desc">
+                        A full-stack time tracking web application that allows employees to log working hours and
+                        enables admins to monitor productivity, manage shift timings, and generate reports. Includes
+                        role-based authentication, admin dashboard, and secure server-side data fetching.
+                    </p>
+                    <p class="project-tech"><strong>Tech:</strong> Next.js (App Router), React, Supabase (Auth,
+                        Database, RLS), TypeScript, Tailwind CSS, Server Actions, PostgreSQL</p>
+                    <div class="project-links">
+                        <a href="https://time-tracker-app-flame.vercel.app/" class="project-link" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt"></i> Hourlog
+                        </a>
+                    </div>
+                </div>
 
 
                 <!-- Project 1 -->

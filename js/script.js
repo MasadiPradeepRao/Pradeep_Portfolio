@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'section-stack':'STACK','stack-kicker':'TOOLS ARE ONLY PART OF THE SYSTEM','stack-title':'The toolchain,<br>declared.','stack-description':'A practical toolkit for building, securing, shipping, and observing cloud platforms.','stack-cloud':'Cloud platforms','stack-delivery':'CI/CD & GitOps','stack-runtime':'Containers & orchestration','stack-iac':'Infrastructure as Code','stack-observe':'Monitoring & observability','stack-systems':'Scripting & systems',
             'section-projects':'PROJECTS','projects-kicker':'SELECTED BUILDS','projects-title':'From commit<br>to cloud.','projects-description':'A couple of practical projects where application delivery meets infrastructure and operations.','hourlog-description':'A production-oriented time-tracking application with PostgreSQL and role-based access control. Automated build and deployment with GitHub Actions; hosted on Linux behind NGINX.','open-project':'OPEN PROJECT','cloud-project-title':'Cloud infrastructure<br>& monitoring','cloud-project-description':'Deployed OpenStack resources, configured HAProxy and NGINX load balancing, and built Prometheus and Grafana dashboards. Used load testing and automated scaling to improve availability and resource utilization.','view-repository':'VIEW REPOSITORY',
             'section-education':'EDUCATION','education-kicker':'FOUNDATIONS','education-title':'Learning that<br>connects systems.','msc-title':'Master’s in Telecommunication Systems','btech-title':'Bachelor’s in Electronics and Communication Engineering','credentials-label':'SELECTED CREDENTIALS','languages-label':'LANGUAGES',
-            'section-contact':'CONTACT','contact-kicker':'PING PRADEEP@CLOUD','contact-title':'Ready to build<br>something reliable?','contact-description':'Let’s talk about cloud infrastructure, automation, or making delivery more predictable.','contact-status':'OPEN TO A CONVERSATION','contact-button':'Start a conversation','footer-status':'BUILT WITH CARE · DEPLOYED WITH INTENT','back-top':'BACK TO TOP ↑'
+            'section-contact':'CONTACT','contact-kicker':'PING PRADEEP RAO MASADI','contact-title':'Ready to build<br>something reliable?','contact-description':'Let’s talk about cloud infrastructure, automation, or making delivery more predictable.','contact-status':'OPEN TO A CONVERSATION','contact-button':'Start a conversation','footer-status':'BUILT WITH CARE · DEPLOYED WITH INTENT','back-top':'BACK TO TOP ↑'
         },
         sv: {
             'skip-link':'Hoppa till innehåll','skip-intro':'Hoppa över intro','nav-about':'Om mig','nav-stack':'Teknik','nav-projects':'Projekt','nav-education':'Utbildning','nav-contact':'Kontakt','nav-lets-talk':'Kontakta mig',
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'section-stack':'TEKNIK','stack-kicker':'VERKTYGEN ÄR EN DEL AV SYSTEMET','stack-title':'Verktygskedjan,<br>deklarerad.','stack-description':'Verktyg för att bygga, säkra, leverera och övervaka molnplattformar.','stack-cloud':'Molnplattformar','stack-delivery':'CI/CD och GitOps','stack-runtime':'Containrar och orkestrering','stack-iac':'Infrastruktur som kod','stack-observe':'Övervakning och observerbarhet','stack-systems':'Skript och system',
             'section-projects':'PROJEKT','projects-kicker':'UTVALDA BYGGEN','projects-title':'Från commit<br>till molnet.','projects-description':'Praktiska projekt där applikationsleverans möter infrastruktur och drift.','hourlog-description':'En tidsrapporteringsapplikation med PostgreSQL och rollbaserad åtkomst. Automatiserat bygge och driftsättning med GitHub Actions; körs på Linux bakom NGINX.','open-project':'ÖPPNA PROJEKT','cloud-project-title':'Molninfrastruktur<br>och övervakning','cloud-project-description':'Driftsatte OpenStack-resurser, konfigurerade lastbalansering med HAProxy och NGINX och byggde instrumentpaneler i Prometheus och Grafana. Använde belastningstester och automatisk skalning för bättre tillgänglighet och resursutnyttjande.','view-repository':'VISA REPOSITORY',
             'section-education':'UTBILDNING','education-kicker':'GRUND','education-title':'Kunskap som<br>kopplar samman system.','msc-title':'Masterexamen i telekommunikationssystem','btech-title':'Kandidatexamen i elektronik och kommunikationsteknik','credentials-label':'UTVALDA MERITER','languages-label':'SPRÅK',
-            'section-contact':'KONTAKT','contact-kicker':'PING PRADEEP@CLOUD','contact-title':'Ska vi bygga något<br>tillförlitligt?','contact-description':'Hör av dig om molninfrastruktur, automatisering eller hur leveranser kan bli mer förutsägbara.','contact-status':'ÖPPEN FÖR KONTAKT','contact-button':'Starta en konversation','footer-status':'BYGGT MED OMSORG · DRIFTSATT MED AVSIKT','back-top':'TILL TOPPEN ↑'
+            'section-contact':'KONTAKT','contact-kicker':'PING PRADEEP RAO MASADI','contact-title':'Ska vi bygga något<br>tillförlitligt?','contact-description':'Hör av dig om molninfrastruktur, automatisering eller hur leveranser kan bli mer förutsägbara.','contact-status':'ÖPPEN FÖR KONTAKT','contact-button':'Starta en konversation','footer-status':'BYGGT MED OMSORG · DRIFTSATT MED AVSIKT','back-top':'TILL TOPPEN ↑'
         }
     };
     const store = {get(key){try{return localStorage.getItem(key)}catch{return null}},set(key,value){try{localStorage.setItem(key,value)}catch{}}};
@@ -91,5 +91,74 @@ document.addEventListener('DOMContentLoaded', () => {
         }),{rootMargin:'-25% 0px -62% 0px'});
         document.querySelectorAll('main section[id]').forEach(section => sectionObserver.observe(section));
     } else revealTargets.forEach(element => element.classList.add('is-visible'));
+    const nameText = document.querySelector('.name-text');
+    const decodeHeroName = () => {
+        if (reducedMotion || !nameText) return;
+        const finalName = 'PRADEEP RAO MASADI';
+        const glyphs = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#$%&';
+        let started = 0;
+        const drawFrame = now => {
+            if (!started) started = now;
+            const progress = Math.min(1,(now - started) / 1250);
+            const settled = Math.floor(progress * (finalName.length + 2));
+            nameText.textContent = Array.from(finalName,(character,index) => {
+                if (character === ' ' || index < settled) return character;
+                return glyphs[Math.floor(Math.random() * glyphs.length)];
+            }).join('');
+            if (progress < 1) requestAnimationFrame(drawFrame);
+            else nameText.textContent = finalName;
+        };
+        requestAnimationFrame(drawFrame);
+    };
+    window.setTimeout(decodeHeroName,reducedMotion ? 0 : 2450);
+
+    const siteHeader = document.querySelector('.site-header');
+    const heroName = document.querySelector('.hero-person-name');
+    const brandName = document.querySelector('.brand-name');
+    const nameFlight = document.createElement('span');
+    nameFlight.className = 'name-flight';
+    nameFlight.textContent = 'Pradeep Rao Masadi';
+    nameFlight.setAttribute('aria-hidden','true');
+    body.appendChild(nameFlight);
+    const updateHeaderTransition = () => {
+        const scrollY = window.scrollY;
+        siteHeader.classList.toggle('is-scrolled',scrollY > 24);
+        if (reducedMotion) return;
+        const raw = Math.max(0,Math.min(1,(scrollY - 3) / 265));
+        if (raw === 0 || raw === 1) {
+            nameFlight.style.opacity = '0';
+            heroName.style.opacity = '';
+            brandName.style.opacity = '';
+            return;
+        }
+        const progress = raw * raw * (3 - 2 * raw);
+        const from = heroName.getBoundingClientRect();
+        const to = brandName.getBoundingClientRect();
+        const fromStyle = getComputedStyle(heroName);
+        const toStyle = getComputedStyle(brandName);
+        nameFlight.style.left = `${from.left + (to.left - from.left) * progress}px`;
+        nameFlight.style.top = `${from.top + (to.top - from.top) * progress}px`;
+        nameFlight.style.fontSize = `${parseFloat(fromStyle.fontSize) + (parseFloat(toStyle.fontSize) - parseFloat(fromStyle.fontSize)) * progress}px`;
+        nameFlight.style.width = `${from.width + (to.width - from.width) * progress}px`;
+        nameFlight.style.whiteSpace = progress > .94 ? 'nowrap' : 'normal';
+        nameFlight.style.lineHeight = `${parseFloat(fromStyle.lineHeight) + (parseFloat(toStyle.lineHeight) - parseFloat(fromStyle.lineHeight)) * progress}px`;
+        nameFlight.style.fontWeight = fromStyle.fontWeight;
+        nameFlight.style.letterSpacing = `${parseFloat(fromStyle.letterSpacing) + (parseFloat(toStyle.letterSpacing) - parseFloat(fromStyle.letterSpacing)) * progress}px`;
+        nameFlight.style.fontFamily = fromStyle.fontFamily;
+        nameFlight.style.color = `color-mix(in srgb, ${fromStyle.color} ${(1-progress)*100}%, ${toStyle.color})`;
+        nameFlight.style.opacity = '1';
+        heroName.style.opacity = '0';
+        brandName.style.opacity = '0';
+    };
+    let headerFrame = false;
+    const scheduleHeaderTransition = () => {
+        if (headerFrame) return;
+        headerFrame = true;
+        requestAnimationFrame(() => { updateHeaderTransition(); headerFrame = false; });
+    };
+    window.addEventListener('scroll',scheduleHeaderTransition,{passive:true});
+    window.addEventListener('resize',scheduleHeaderTransition);
+    updateHeaderTransition();
+
     document.getElementById('year').textContent = new Date().getFullYear();
 });

@@ -5,7 +5,7 @@ A responsive DevOps and Cloud Engineering portfolio with a terminal-inspired dep
 ## Features
 
 - Responsive layout with a green terminal and release-pipeline visual identity
-- CI/CD-inspired build, test, deploy, and release intro (with skip and reduced-motion support)
+- CI/CD-inspired build, test, deploy, and release intro with a decoded hero name that transitions into the compact header
 - Light and dark themes with saved preference
 - English and Swedish language options
 - Selected project cards, technology stack, education, credentials, languages, and contact links

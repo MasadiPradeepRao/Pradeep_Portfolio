@@ -1,30 +1,52 @@
-# Pradeep Rao Masadi - Portfolio
+# Pradeep Rao Masadi — Portfolio
 
-A responsive DevOps and Cloud Engineering portfolio with a terminal-inspired deployment introduction, infrastructure stack, selected projects, education, and contact links.
+I built this portfolio from the ground up to introduce myself and share my background in DevOps and cloud engineering. I designed the site around the work I enjoy: building reliable infrastructure, automating delivery, and making systems easier to operate.
 
-## Features
+## What’s inside
 
-- Responsive layout with a green terminal and release-pipeline visual identity
-- CI/CD-inspired build, test, deploy, and release intro with a decoded hero name that transitions into the compact header
-- Light and dark themes with saved preference
+- A responsive portfolio built with HTML, CSS, and vanilla JavaScript
+- A deployment pipeline inspired intro and a sticky capsule navigation with a smooth name transition
+- Light and dark themes, with the selected theme saved in the browser
 - English and Swedish language options
-- Selected project cards, technology stack, education, credentials, languages, and contact links
-- Downloadable current résumé
+- A profile card, technology stack, selected projects, education, credentials, languages, and contact links
+- A downloadable résumé
+- Scroll reveals, a reading progress bar, and subtle pointer motion; reduced motion preferences are respected
 
-## Project files
+## Run it locally
 
-- `index.html` — page content and metadata
-- `css/style.css` — layout, themes, animations, and responsive styles
-- `js/script.js` — intro, navigation, theme, language, and scroll interactions
-- `assets/images/PRADEEP_CV.pdf` — current résumé
-- `assets/images/profile.png` — profile image
+There is no build step or package installation. From the project folder, start a local web server:
 
-## Run locally
-
-Open `index.html` in a browser, or run a local server from this folder with Python:
-
-```sh
-python -m http.server 8000
+```powershell
+py -m http.server 8000
 ```
 
-Then open `http://localhost:8000`.
+Then open [http://localhost:8000](http://localhost:8000) in a browser. A local server also lets the browser handle storage and navigation consistently.
+
+## Project structure
+
+```text
+.
+├── assets/
+│   └── images/
+│       ├── PRADEEP_CV.pdf
+│       └── favicon.png
+│       └── profile.png
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── 404.html
+├── index.html
+├── LICENSE
+└── README.md
+```
+
+## Built with
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Manrope and DM Mono from Google Fonts
+- Font Awesome icons
+
+The site is published with GitHub Pages from the `Pradeep_Portfolio` repository.

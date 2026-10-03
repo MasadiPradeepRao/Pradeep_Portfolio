@@ -29,7 +29,7 @@ Then open [http://localhost:8000](http://localhost:8000) in a browser. A local s
 ├── assets/
 │   └── images/
 │       ├── PRADEEP_CV.pdf
-│       └── favicon.png
+│       ├── favicon.png
 │       └── profile.png
 ├── css/
 │   └── style.css

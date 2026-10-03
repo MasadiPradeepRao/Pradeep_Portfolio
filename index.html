@@ -1,342 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Pradeep Rao Masadi - DevOps and Cloud Engineer">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Pradeep Rao Masadi | Portfolio">
-    <meta property="og:description"
-        content="DevOps and Cloud Engineer specializing in AWS, CI/CD, and infrastructure automation">
+    <meta name="theme-color" content="#f6f8f4">
+    <meta name="description" content="Pradeep Rao Masadi — DevOps and Cloud Engineer focused on AWS, CI/CD automation, and infrastructure as code.">
+    <meta property="og:title" content="Pradeep Rao Masadi | DevOps & Cloud Engineer">
+    <meta property="og:description" content="Building reliable cloud infrastructure and automated delivery pipelines.">
     <meta property="og:image" content="https://masadipradeeprao.github.io/Pradeep_Portfolio/assets/images/profile.png">
     <meta property="og:url" content="https://masadipradeeprao.github.io/Pradeep_Portfolio/">
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Favicon -->
+    <link rel="canonical" href="https://masadipradeeprao.github.io/Pradeep_Portfolio/">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
-
-    <title>Pradeep Rao Masadi | Portfolio</title>
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Devicon -->
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Font Awesome for Icons (Optional but good for contact/skills) -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Schema.org JSON-LD -->
+    <link rel="stylesheet" href="css/style.css">
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Pradeep Rao Masadi",
-      "jobTitle": "DevOps Engineer",
-      "url": "https://masadipradeeprao.github.io/Pradeep_Portfolio/",
-      "sameAs": [
-        "https://www.linkedin.com/in/pradeep-rao-masadi/",
-        "https://github.com/MasadiPradeepRao"
-      ],
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Blekinge Institute of Technology"
-      },
-      "email": "masadipradeep77@gmail.com",
-      "telephone": "+46 793 558 003"
-    }
+    {"@context":"https://schema.org","@type":"Person","name":"Pradeep Rao Masadi","jobTitle":"DevOps Engineer","url":"https://masadipradeeprao.github.io/Pradeep_Portfolio/","email":"masadipradeep77@gmail.com","telephone":"+46 793 558 003","sameAs":["https://www.linkedin.com/in/pradeep-rao-masadi/","https://github.com/MasadiPradeepRao"],"alumniOf":{"@type":"CollegeOrUniversity","name":"Blekinge Institute of Technology"}}
     </script>
+    <title>Pradeep Rao Masadi | DevOps & Cloud Engineer</title>
 </head>
-
 <body>
-    <a href="#hero" class="skip-link">Skip to content</a>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#hero" class="logo">Pradeep Rao Masadi</a>
-
-            <ul class="nav-links">
-                <li><a href="#about" data-lang="nav-about">About</a></li>
-                <li><a href="#skills" data-lang="nav-skills">Skills</a></li>
-                <li><a href="#projects" data-lang="nav-projects">Projects</a></li>
-                <li><a href="#education" data-lang="nav-education">Education</a></li>
-                <li><a href="#contact" data-lang="nav-contact">Contact</a></li>
-            </ul>
-
-            <div class="nav-right">
-                <!-- Theme Toggle -->
-                <button class="theme-toggle" aria-label="Toggle Dark Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-
-                <div class="lang-toggle">
-                    <button class="lang-btn active" data-lang-val="en" aria-label="English">
-                        <img src="assets/images/flag-en.png" alt="EN" class="flag-icon">
-                        <span>EN</span>
-                    </button>
-                    <button class="lang-btn" data-lang-val="sv" aria-label="Swedish">
-                        <img src="assets/images/flag-sv.png" alt="SV" class="flag-icon">
-                        <span>SV</span>
-                    </button>
-                </div>
-                <button class="menu-toggle" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
+    <a href="#main" class="skip-link" data-lang="skip-link">Skip to content</a>
+    <div class="boot-screen" id="boot-screen" role="status" aria-live="polite" aria-label="Portfolio deployment animation">
+        <div class="boot-inner">
+            <div class="boot-command"><span>pradeep@cloud</span> :~$ deploy --env portfolio <i></i></div>
+            <div class="pipeline" aria-hidden="true"><div class="pipeline-track"><span></span></div>
+                <div class="pipeline-step"><b><i class="fa-solid fa-check"></i></b><small>BUILD</small></div>
+                <div class="pipeline-step"><b><i class="fa-solid fa-check"></i></b><small>TEST</small></div>
+                <div class="pipeline-step"><b><i class="fa-solid fa-check"></i></b><small>DEPLOY</small></div>
+                <div class="pipeline-step"><b><i class="fa-solid fa-check"></i></b><small>RELEASE</small></div>
             </div>
+            <div class="boot-status"><span id="boot-message">initializing delivery pipeline…</span><strong id="boot-percent">0%</strong></div>
+            <button class="boot-skip" type="button" data-lang="skip-intro">Skip intro</button>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <!-- Hero Section -->
-    <header id="hero" class="hero-section">
-        <div class="hero-bg-graphic">
-            <!-- Minimal Geometric Pattern -->
-            <svg width="100%" height="100%" viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                        <circle cx="2" cy="2" r="1.5" fill="#e5e5e5" />
-                    </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#grid)" opacity="0.4" />
-                <circle cx="90%" cy="20%" r="300" fill="rgba(199, 167, 108, 0.03)" />
-                <circle cx="10%" cy="90%" r="200" fill="rgba(199, 167, 108, 0.05)" />
-            </svg>
-        </div>
-
-        <div class="container hero-container">
-            <div class="hero-content">
-                <p class="hero-greeting text-gradient">Hello, I'm</p>
-                <h1 class="hero-title">
-                    <span class="hero-name-full">Pradeep Rao Masadi</span>
-                </h1>
-                <h2 class="hero-subtitle" data-lang="hero-subtitle">DevOps Engineer | Cloud Engineer</h2>
-                <p class="hero-description" data-lang="hero-desc">
-                    Building reliable cloud infrastructure and automated delivery pipelines with AWS, Kubernetes, and Infrastructure as Code.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary hover-lift" data-lang="hero-btn-projects">View
-                        Projects</a>
-                    <a href="assets/images/PRADEEP_CV.pdf" download="Pradeep_Rao_Masadi_Resume" target="_blank"
-                        class="btn btn-secondary hover-lift" data-lang="hero-btn-resume">Download Resume/CV</a>
-                </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="Main navigation">
+            <a class="brand" href="#home"><span class="brand-mark">P<span>.</span></span><span>pradeep<span class="brand-muted">@cloud</span></span></a>
+            <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+            <div class="nav-menu">
+                <a href="#about" data-lang="nav-about">About</a><a href="#skills" data-lang="nav-stack">Stack</a><a href="#projects" data-lang="nav-projects">Projects</a><a href="#education" data-lang="nav-education">Education</a><a href="#contact" data-lang="nav-contact">Contact</a>
             </div>
-            <div class="hero-image-wrapper glass-effect">
-                <img src="assets/images/profile.png" alt="Pradeep Rao Masadi" class="hero-profile-img">
+            <div class="nav-tools">
+                <div class="language-switch" aria-label="Choose language"><button class="lang-btn active" data-lang-val="en" aria-label="English">EN</button><span></span><button class="lang-btn" data-lang-val="sv" aria-label="Swedish">SV</button></div>
+                <button class="theme-toggle" aria-label="Switch to dark theme"><i class="fa-regular fa-moon"></i></button>
+                <a class="nav-cta" href="#contact"><span data-lang="nav-lets-talk">Let’s talk</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
-        </div>
-
-
+        </nav>
     </header>
-
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-        <div class="container">
-            <h2 class="section-title" data-lang="about-title">About Me</h2>
-            <div class="about-content">
-                <p data-lang="about-p1">
-                    I am a DevOps and Cloud Engineer focused on AWS infrastructure, CI/CD automation, and containerized deployments. I build repeatable infrastructure with Terraform, automate delivery pipelines, and monitor cloud systems for reliability.
-                </p>
-                <p>
-                    <strong data-lang="about-interests-label">Career Interests:</strong> <span
-                        data-lang="about-interests-list">AWS, DevOps, CI/CD, Kubernetes, Infrastructure as Code, and Cloud Reliability.</span>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section skills-section">
-        <div class="container">
-            <h2 class="section-title" data-lang="skills-title">Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3 data-lang="skills-cloud">☁️ Cloud Platforms</h3>
-                    <div class="skill-tags">
-                        <span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS (EC2, VPC, IAM, S3, EKS, RDS, Route 53, CloudFront)</span>
-                        <span>Azure</span><span>OpenStack</span>
+    <main id="main">
+        <section class="hero-section" id="home">
+            <div class="hero-grid-backdrop" aria-hidden="true"></div>
+            <div class="page-shell hero-layout">
+                <div class="hero-copy">
+                    <div class="eyebrow"><span class="status-dot"></span><span data-lang="hero-eyebrow">DEVOPS & CLOUD ENGINEER</span><span class="eyebrow-divider">/</span><span>SWEDEN</span></div>
+                    <h1><span data-lang="hero-greeting">Reliable systems.</span><br><span class="hero-accent" data-lang="hero-headline">Confident releases.</span></h1>
+                    <p class="hero-lede" data-lang="hero-description">I build cloud infrastructure and delivery pipelines that make software releases repeatable, observable, and secure.</p>
+                    <div class="hero-actions"><a class="button button-primary" href="#projects"><span data-lang="hero-projects">Explore projects</span><i class="fa-solid fa-arrow-down"></i></a><a class="button button-quiet" href="assets/images/PRADEEP_CV.pdf" download="Pradeep_Rao_Masadi_Resume.pdf"><i class="fa-regular fa-file-lines"></i><span data-lang="hero-resume">Download résumé</span></a></div>
+                    <div class="hero-techline"><span data-lang="hero-focus">FOCUS</span><b>AWS</b><span>·</span><b>CI/CD</b><span>·</span><b>Kubernetes</b><span>·</span><b>IaC</b></div>
+                </div>
+                <div class="deploy-card" aria-label="DevOps delivery workflow">
+                    <div class="card-topline"><div class="window-dots"><i></i><i></i><i></i></div><span>delivery-pipeline.yml</span><span class="card-top-status"><i></i> READY</span></div>
+                    <div class="deploy-body"><div class="deploy-heading"><span class="mono-label">PIPELINE / 001</span><span class="mono-label">MAIN → PROD</span></div><div class="deploy-command"><span class="prompt">$</span> ship --secure --repeatable</div>
+                        <div class="deploy-steps"><div class="deploy-node"><span><i class="fa-solid fa-code-branch"></i></span><div><b>Commit</b><small>source tracked</small></div></div><div class="deploy-connector"><i></i></div><div class="deploy-node"><span><i class="fa-solid fa-shield-halved"></i></span><div><b>Validate</b><small>quality gates</small></div></div><div class="deploy-connector"><i></i></div><div class="deploy-node"><span><i class="fa-solid fa-cloud-arrow-up"></i></span><div><b>Release</b><small>cloud ready</small></div></div></div>
+                        <div class="deploy-log"><span class="log-check">✓</span><span data-lang="pipeline-message">infrastructure as code · delivery automated · observability enabled</span></div>
                     </div>
+                    <div class="deploy-footer"><span><i class="fa-solid fa-location-dot"></i> SWEDEN</span><span>BUILD WITH INTENT <b>↗</b></span></div><div class="card-orbit orbit-one"></div><div class="card-orbit orbit-two"></div>
                 </div>
-                <div class="skill-card">
-                    <h3 data-lang="skills-deployment">🚀 DevOps & CI/CD</h3>
-                    <div class="skill-tags">
-                        <span><i class="devicon-jenkins-line colored"></i> Jenkins</span><span>GitHub Actions</span><span>GitLab CI/CD</span>
-                        <span>Maven</span><span>Nexus</span><span>SonarQube</span><span>Argo CD</span><span>GitOps</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>📦 Containers & Orchestration</h3>
-                    <div class="skill-tags"><span><i class="devicon-docker-plain colored"></i> Docker</span><span><i class="devicon-kubernetes-plain colored"></i> Kubernetes</span><span>Amazon EKS</span><span>Helm</span></div>
-                </div>
-                <div class="skill-card">
-                    <h3>🏗️ Infrastructure as Code</h3>
-                    <div class="skill-tags"><span><i class="devicon-terraform-plain colored"></i> Terraform</span><span><i class="devicon-ansible-plain colored"></i> Ansible</span><span>Configuration Management</span></div>
-                </div>
-                <div class="skill-card">
-                    <h3 data-lang="skills-monitoring">🔍 Monitoring & Observability</h3>
-                    <div class="skill-tags"><span><i class="devicon-prometheus-original colored"></i> Prometheus</span><span><i class="devicon-grafana-plain colored"></i> Grafana</span><span>CloudWatch</span><span>ELK Stack</span><span>Alerting & Dashboards</span></div>
-                </div>
-                <div class="skill-card">
-                    <h3>🌐 Networking & Security</h3>
-                    <div class="skill-tags"><span>VPC & IAM</span><span>Security Groups & Firewalls</span><span>Load Balancers / ALB</span><span><i class="devicon-nginx-plain colored"></i> NGINX</span><span>HAProxy</span><span>DNS</span></div>
-                </div>
-                <div class="skill-card">
-                    <h3>⌨️ Scripting & Systems</h3>
-                    <div class="skill-tags"><span><i class="devicon-linux-plain colored"></i> Linux</span><span>Windows</span><span><i class="devicon-python-plain colored"></i> Python</span><span>Bash / Shell</span><span>Groovy</span><span>YAML</span></div>
-                </div>
-                <div class="skill-card">
-                    <h3 data-lang="skills-prog">💻 Programming Languages</h3>
-                    <div class="skill-tags"><span><i class="devicon-python-plain colored"></i> Python</span><span><i class="devicon-c-plain colored"></i> C / C++</span><span><i class="devicon-javascript-plain colored"></i> JavaScript</span><span>TypeScript</span></div>
-                </div>
+                <a href="#about" class="hero-scroll"><span data-lang="scroll-story">SCROLL TO EXPLORE</span><i class="fa-solid fa-arrow-down-long"></i></a><div class="hero-index mono-label">01 <span>/</span> 05</div>
             </div>
-
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section projects-section">
-        <div class="container">
-            <h2 class="section-title" data-lang="projects-title">Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Hourlog – CI/CD & Cloud Deployment</h3>
-                    <p class="project-desc">A production-oriented time-tracking application with PostgreSQL and role-based access control. Built an automated GitHub Actions workflow and deployed on Linux behind NGINX.</p>
-                    <p class="project-tech"><strong>Tech:</strong> Next.js, React, TypeScript, Supabase, GitHub Actions, Linux, NGINX, Vercel</p>
-                    <div class="project-links"><a href="https://time-tracker-app-flame.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Hourlog</a></div>
-                </div>
-                <div class="project-card">
-                    <h3>Cloud Infrastructure Deployment & Monitoring</h3>
-                    <p class="project-desc">Deployed OpenStack cloud resources, configured HAProxy and NGINX load balancing, and built Prometheus and Grafana dashboards. Used load testing and automated scaling to improve availability and resource use.</p>
-                    <p class="project-tech"><strong>Tech:</strong> Linux, OpenStack, HAProxy, NGINX, Prometheus, Grafana, Apache Benchmark</p>
-                    <a href="https://github.com/MasadiPradeepRao/NSO-A.2" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Project</a>
-                </div>
+        </section>
+        <section class="section about-section" id="about"><div class="page-shell section-layout"><div class="section-label"><span>01</span><span data-lang="section-about">ABOUT</span><i></i></div><div class="about-main">
+            <div class="section-heading-row"><div><p class="kicker" data-lang="about-kicker">BUILDING THE PATH TO PRODUCTION</p><h2 data-lang="about-title">Reliability is built<br>into the process.</h2></div><div class="profile-frame"><img src="assets/images/profile.png" alt="Pradeep Rao Masadi" loading="lazy"><span class="profile-frame-tag">PRM / CLOUD</span></div></div>
+            <div class="about-text-grid"><p class="about-lead" data-lang="about-lead">I’m a DevOps and Cloud Engineer focused on AWS infrastructure, CI/CD automation, and containerized deployments.</p><div><p data-lang="about-copy">I build repeatable infrastructure with Terraform, automate software delivery, and use monitoring to help teams detect issues and release with confidence. My background in telecommunication systems brings a strong foundation in networks and connected platforms.</p><div class="principles"><div><span>01</span><b data-lang="principle-automation">Automate the repeatable</b></div><div><span>02</span><b data-lang="principle-observe">Make systems observable</b></div><div><span>03</span><b data-lang="principle-reliable">Design for reliability</b></div></div></div></div>
+        </div></div></section>
+        <section class="section stack-section" id="skills"><div class="page-shell section-layout"><div class="section-label"><span>02</span><span data-lang="section-stack">STACK</span><i></i></div><div class="stack-main">
+            <div class="section-intro"><p class="kicker" data-lang="stack-kicker">TOOLS ARE ONLY PART OF THE SYSTEM</p><h2 data-lang="stack-title">The toolchain,<br>declared.</h2><p data-lang="stack-description">A practical toolkit for building, securing, shipping, and observing cloud platforms.</p></div>
+            <div class="stack-terminal"><div class="terminal-bar"><span><i></i><i></i><i></i></span><b>stack.yaml</b><small>TRACKED · CURRENT</small></div><div class="stack-code" aria-hidden="true"><span class="line-number">01</span><span class="yaml-key">cloud:</span><span>[aws, azure, openstack]</span><span class="line-number">02</span><span class="yaml-key">delivery:</span><span>[jenkins, github-actions, gitlab-ci]</span><span class="line-number">03</span><span class="yaml-key">containers:</span><span>[docker, kubernetes, eks, helm]</span><span class="line-number">04</span><span class="yaml-key">iac:</span><span>[terraform, ansible]</span><span class="line-number">05</span><span class="yaml-key">observe:</span><span>[prometheus, grafana, cloudwatch, elk]</span></div></div>
+            <div class="stack-grid">
+                <article class="stack-card"><span class="stack-icon"><i class="fa-solid fa-cloud"></i></span><div><p class="mono-label">01 / CLOUD</p><h3 data-lang="stack-cloud">Cloud platforms</h3><p>AWS · Azure · OpenStack</p></div><span class="card-arrow">↗</span></article>
+                <article class="stack-card"><span class="stack-icon"><i class="fa-solid fa-arrows-rotate"></i></span><div><p class="mono-label">02 / DELIVERY</p><h3 data-lang="stack-delivery">CI/CD & GitOps</h3><p>Jenkins · GitHub Actions · GitLab CI/CD · Argo CD</p></div><span class="card-arrow">↗</span></article>
+                <article class="stack-card"><span class="stack-icon"><i class="fa-brands fa-docker"></i></span><div><p class="mono-label">03 / RUNTIME</p><h3 data-lang="stack-runtime">Containers & orchestration</h3><p>Docker · Kubernetes · Amazon EKS · Helm</p></div><span class="card-arrow">↗</span></article>
+                <article class="stack-card"><span class="stack-icon"><i class="fa-solid fa-cubes-stacked"></i></span><div><p class="mono-label">04 / INFRASTRUCTURE</p><h3 data-lang="stack-iac">Infrastructure as Code</h3><p>Terraform · Ansible · YAML</p></div><span class="card-arrow">↗</span></article>
+                <article class="stack-card"><span class="stack-icon"><i class="fa-solid fa-chart-line"></i></span><div><p class="mono-label">05 / OBSERVABILITY</p><h3 data-lang="stack-observe">Monitoring & observability</h3><p>Prometheus · Grafana · CloudWatch · ELK</p></div><span class="card-arrow">↗</span></article>
+                <article class="stack-card"><span class="stack-icon"><i class="fa-solid fa-terminal"></i></span><div><p class="mono-label">06 / SYSTEMS</p><h3 data-lang="stack-systems">Scripting & systems</h3><p>Linux · Python · Bash · Groovy · Windows</p></div><span class="card-arrow">↗</span></article>
             </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section education-section">
-        <div class="container">
-            <h2 class="section-title" data-lang="education-title">Education</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <h3 data-lang="edu-msc">Master’s in Telecommunication Systems</h3>
-                    <p class="school">Blekinge Institute of Technology (BTH), Karlskrona, Sweden · Jan 2023 – Jan 2025</p>
-                </div>
-                <div class="education-card">
-                    <h3 data-lang="edu-btech">Bachelor’s in Electronics and Communication Engineering</h3>
-                    <p class="school">Jawaharlal Nehru Technological University Hyderabad (JNTUH) · Aug 2019 – Jan 2023</p>
-                </div>
+        </div></div></section>
+        <section class="section projects-section" id="projects"><div class="page-shell section-layout"><div class="section-label"><span>03</span><span data-lang="section-projects">PROJECTS</span><i></i></div><div class="projects-main">
+            <div class="section-intro projects-intro"><p class="kicker" data-lang="projects-kicker">SELECTED BUILDS</p><h2 data-lang="projects-title">From commit<br>to cloud.</h2><p data-lang="projects-description">A couple of practical projects where application delivery meets infrastructure and operations.</p></div>
+            <div class="project-list">
+                <article class="project-card project-hourlog"><div class="project-number">01</div><div class="project-content"><div class="project-meta"><span>APPLICATION DELIVERY</span><span>CI/CD · CLOUD</span></div><h3>Hourlog</h3><p data-lang="hourlog-description">A production-oriented time-tracking application with PostgreSQL and role-based access control. Automated build and deployment with GitHub Actions; hosted on Linux behind NGINX.</p><div class="project-tags"><span>Next.js</span><span>TypeScript</span><span>Supabase</span><span>GitHub Actions</span><span>NGINX</span></div><a class="text-link" href="https://time-tracker-app-flame.vercel.app/" target="_blank" rel="noopener noreferrer"><span data-lang="open-project">OPEN PROJECT</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div><div class="project-art hourlog-art" aria-hidden="true"><div class="art-window"><div><i></i><i></i><i></i><span>hourlog / deployment</span></div><b>release <em>stable</em></b><span class="art-line"></span><small>build&nbsp; ✓ &nbsp;validate&nbsp; ✓ &nbsp;deploy&nbsp; ✓</small></div></div></article>
+                <article class="project-card project-cloud"><div class="project-number">02</div><div class="project-content"><div class="project-meta"><span>PLATFORM ENGINEERING</span><span>OPENSTACK · OBSERVABILITY</span></div><h3 data-lang="cloud-project-title">Cloud infrastructure<br>& monitoring</h3><p data-lang="cloud-project-description">Deployed OpenStack resources, configured HAProxy and NGINX load balancing, and built Prometheus and Grafana dashboards. Used load testing and automated scaling to improve availability and resource utilization.</p><div class="project-tags"><span>OpenStack</span><span>HAProxy</span><span>Prometheus</span><span>Grafana</span><span>Apache Benchmark</span></div><a class="text-link" href="https://github.com/MasadiPradeepRao/NSO-A.2" target="_blank" rel="noopener noreferrer"><span data-lang="view-repository">VIEW REPOSITORY</span><i class="fa-brands fa-github"></i></a></div><div class="project-art cloud-art" aria-hidden="true"><div class="cloud-diagram"><div class="cloud-node"><i class="fa-solid fa-cloud"></i><span>OPENSTACK</span></div><div class="cloud-links"><i></i><i></i><i></i></div><div class="cloud-services"><span><i class="fa-solid fa-scale-balanced"></i> LOAD BALANCE</span><span><i class="fa-solid fa-chart-simple"></i> METRICS</span><span><i class="fa-solid fa-bell"></i> ALERTS</span></div></div></div></article>
             </div>
-        </div>
-    </section>
-
-    <!-- Publications & Certifications -->
-    <section class="section">
-        <div class="container split-section">
-            <div class="column">
-                <h2 class="section-title" data-lang="publication-title">Publications</h2>
-                <ul class="list-items">
-                    <li>
-                        <strong>Design and Optimization of Massive MIMO Systems for 5G Networks</strong><br>
-                        <span class="sub-text">Published Jan 2025</span>
-                        <a href="https://bth.diva-portal.org/smash/record.jsf?pid=diva2%3A1930019&dswid=-3812"
-                            target="_blank" rel="noopener noreferrer" class="btn-xs" data-lang="btn-show-pub">Show
-                            Publication</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="column">
-                <h2 class="section-title" data-lang="certification-title">Certifications</h2>
-                <ul class="list-items">
-                    <li>
-                        <span>Machine Learning Pipelines with Azure ML Studio (Coursera)</span><br>
-                        <a href="https://coursera.org/share/3db84cf249e5388ae8899e80dfd7d612" target="_blank"
-                            rel="noopener noreferrer" class="btn-xs" data-lang="btn-show-cert">Show Certificate</a>
-                    </li>
-                    <li>
-                        <span>IoT and Embedded Systems – UC Irvine</span><br>
-                        <a href="https://coursera.org/share/fa8e02c1f90f1ba80e4930492e2e2c03" target="_blank"
-                            rel="noopener noreferrer" class="btn-xs" data-lang="btn-show-cert">Show Certificate</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="section languages-section">
-        <div class="container">
-            <h2 class="section-title">Languages</h2>
-            <div class="education-grid">
-                <div class="education-card"><h3>English</h3><p class="school">Professional working proficiency</p></div>
-                <div class="education-card"><h3>Swedish</h3><p class="school">A1 · Basic</p></div>
-                <div class="education-card"><h3>Hindi</h3><p class="school">Professional proficiency</p></div>
-                <div class="education-card"><h3>Telugu</h3><p class="school">Native</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2 class="section-title" data-lang="contact-title">Contact Me</h2>
-            <div class="contact-content-wrapper">
-                <div class="contact-form-container">
-                    <form id="contact-form" action="https://formspree.io/f/mjggbpoz" method="POST">
-                        <div class="form-group">
-                            <label for="name" data-lang="label-name">Name</label>
-                            <input type="text" id="name" name="name" required placeholder="Your Name"
-                                data-lang-placeholder="ph-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email" data-lang="label-email">Email ID</label>
-                            <input type="email" id="email" name="email" required placeholder="Your Email"
-                                data-lang-placeholder="ph-email">
-                        </div>
-                        <div class="form-group">
-                            <label for="message" data-lang="label-message">Message</label>
-                            <textarea id="message" name="message" rows="5" maxlength="5000" required
-                                placeholder="Your Message (Max 1000 words)"
-                                data-lang-placeholder="ph-message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary contact-submit" data-lang="btn-send">Send
-                            Message</button>
-                        <p id="contact-status" class="contact-status"></p>
-                    </form>
-                </div>
-                <div class="social-links">
-                    <!-- Social links are moved or can stay alongside -->
-                    <a href="mailto:masadipradeep77@gmail.com" class="social-btn"><i class="fas fa-envelope"></i>
-                        Email</a>
-                    <a href="tel:+46793558003" class="social-btn"><i class="fas fa-phone"></i> +46 793 558 003</a>
-                    <a href="https://www.linkedin.com/in/pradeep-rao-masadi/" target="_blank" rel="noopener noreferrer"
-                        class="social-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/MasadiPradeepRao" target="_blank" rel="noopener noreferrer"
-                        class="social-btn"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Pradeep Rao Masadi. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
+        </div></div></section>
+        <section class="section education-section" id="education"><div class="page-shell section-layout"><div class="section-label"><span>04</span><span data-lang="section-education">EDUCATION</span><i></i></div><div class="education-main">
+            <div class="section-intro"><p class="kicker" data-lang="education-kicker">FOUNDATIONS</p><h2 data-lang="education-title">Learning that<br>connects systems.</h2></div>
+            <div class="education-list"><article class="education-item"><span class="education-mark">BTH</span><div><p class="mono-label">JAN 2023 — JAN 2025 · KARLSKRONA, SWEDEN</p><h3 data-lang="msc-title">Master’s in Telecommunication Systems</h3><p>Blekinge Institute of Technology</p></div><span class="education-type">M.SC</span></article><article class="education-item"><span class="education-mark">JNTU</span><div><p class="mono-label">AUG 2019 — JAN 2023 · HYDERABAD, INDIA</p><h3 data-lang="btech-title">Bachelor’s in Electronics and Communication Engineering</h3><p>Jawaharlal Nehru Technological University Hyderabad</p></div><span class="education-type">B.TECH</span></article></div>
+            <div class="credentials-row"><div><span class="credential-icon"><i class="fa-solid fa-award"></i></span><div><p class="mono-label" data-lang="credentials-label">SELECTED CREDENTIALS</p><p>Machine Learning Pipelines with Azure ML Studio · Coursera</p><p>IoT and Embedded Systems · UC Irvine</p></div></div><div class="language-list"><span class="mono-label" data-lang="languages-label">LANGUAGES</span><p>English <b>Professional</b> · Swedish <b>A1</b></p><p>Hindi <b>Professional</b> · Telugu <b>Native</b></p></div></div>
+        </div></div></section>
+        <section class="contact-section" id="contact"><div class="contact-grid-backdrop" aria-hidden="true"></div><div class="page-shell contact-layout"><div class="section-label"><span>05</span><span data-lang="section-contact">CONTACT</span><i></i></div><div class="contact-main"><p class="kicker" data-lang="contact-kicker">PING PRADEEP@CLOUD</p><h2 data-lang="contact-title">Ready to build<br>something reliable?</h2><p class="contact-lede" data-lang="contact-description">Let’s talk about cloud infrastructure, automation, or making delivery more predictable.</p><div class="contact-details"><a href="mailto:masadipradeep77@gmail.com"><i class="fa-regular fa-envelope"></i> masadipradeep77@gmail.com <i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="tel:+46793558003"><i class="fa-solid fa-phone"></i> +46 793 558 003 <i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="https://www.linkedin.com/in/pradeep-rao-masadi/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="https://github.com/MasadiPradeepRao" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div><div class="contact-side"><div class="contact-status"><span class="status-dot"></span><span data-lang="contact-status">OPEN TO A CONVERSATION</span></div><a class="contact-mail-button" href="mailto:masadipradeep77@gmail.com"><span data-lang="contact-button">Start a conversation</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a><span class="contact-signoff">PRM<span>.</span> · SWEDEN</span></div></div></section>
+    </main>
+    <footer class="site-footer"><div class="page-shell footer-inner"><a class="brand" href="#home"><span class="brand-mark">P<span>.</span></span><span>pradeep<span class="brand-muted">@cloud</span></span></a><span class="footer-built"><span class="status-dot"></span><span data-lang="footer-status">BUILT WITH CARE · DEPLOYED WITH INTENT</span></span><span>© <span id="year"></span> PRADEEP RAO MASADI</span><a class="back-top" href="#home" data-lang="back-top">BACK TO TOP ↑</a></div></footer>
     <script src="js/script.js"></script>
 </body>
-
 </html>

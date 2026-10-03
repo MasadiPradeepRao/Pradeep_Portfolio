@@ -1,442 +1,95 @@
-/* 
-   Project: Personal Portfolio
-   Author: Pradeep Rao Masadi
-   Date: 2026
-*/
-
 document.addEventListener('DOMContentLoaded', () => {
-
-    // --- Safe Storage Wrapper ---
-    const storage = {
-        getItem: (key) => {
-            try {
-                return localStorage.getItem(key);
-            } catch (e) {
-                console.warn('Storage access failed:', e);
-                return null;
-            }
-        },
-        setItem: (key, value) => {
-            try {
-                localStorage.setItem(key, value);
-            } catch (e) {
-                console.warn('Storage write failed:', e);
-            }
-        }
-    };
-
-    // --- Language Translation Logic ---
-    const content = {
+    const body = document.body;
+    const boot = document.getElementById('boot-screen');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const translations = {
         en: {
-            "nav-about": "About",
-            "nav-skills": "Skills",
-            "nav-projects": "Projects",
-            "nav-education": "Education",
-            "nav-contact": "Contact",
-            "hero-subtitle": "DevOps Engineer | Cloud Engineer",
-            "hero-desc": "Building reliable cloud infrastructure and automated delivery pipelines with AWS, Kubernetes, and Infrastructure as Code.",
-            "hero-btn-projects": "View Projects",
-            "hero-btn-resume": "Download Resume/CV",
-            "about-title": "About Me",
-            "about-p1": "I am a DevOps and Cloud Engineer focused on AWS infrastructure, CI/CD automation, and containerized deployments. I build repeatable infrastructure with Terraform, automate delivery pipelines, and monitor cloud systems for reliability.",
-            "about-interests-label": "Career Interests:",
-            "about-interests-list": "AWS, DevOps, CI/CD, Kubernetes, Infrastructure as Code, and Cloud Reliability.",
-            "skills-title": "Skills & Technologies",
-            "skills-prog": "💻 Programming Languages",
-            "skills-cloud": "☁️ Cloud & DevOps",
-            "skills-monitoring": "🔍 Monitoring & Observability",
-
-            "projects-title": "Projects",
-            "skills-deployment": "🚀 DevOps & CI/CD",
-            "btn-view-project": "View Project",
-            "education-title": "Education",
-            "edu-msc": "Master’s in Telecommunication Systems",
-            "edu-btech": "Bachelor’s in Electronics and Communication Engineering",
-            "publication-title": "Publications",
-            "btn-show-pub": "Show Publication",
-            "certification-title": "Certifications",
-            "btn-show-cert": "Show Certificate",
-            "contact-title": "Contact Me",
-            "label-name": "Name",
-            "label-email": "Email ID",
-            "label-message": "Message",
-            "ph-name": "Your Name",
-            "ph-email": "Your Email",
-            "ph-message": "Your Message (Max 1000 words)",
-            "btn-send": "Send Message",
-            "btn-view-pub": "View Publication"
+            'skip-link':'Skip to content','skip-intro':'Skip intro','nav-about':'About','nav-stack':'Stack','nav-projects':'Projects','nav-education':'Education','nav-contact':'Contact','nav-lets-talk':'Let’s talk',
+            'hero-eyebrow':'DEVOPS & CLOUD ENGINEER','hero-greeting':'Reliable systems.','hero-headline':'Confident releases.','hero-description':'I build cloud infrastructure and delivery pipelines that make software releases repeatable, observable, and secure.','hero-projects':'Explore projects','hero-resume':'Download résumé','hero-focus':'FOCUS','pipeline-message':'infrastructure as code · delivery automated · observability enabled','scroll-story':'SCROLL TO EXPLORE',
+            'section-about':'ABOUT','about-kicker':'BUILDING THE PATH TO PRODUCTION','about-title':'Reliability is built<br>into the process.','about-lead':'I’m a DevOps and Cloud Engineer focused on AWS infrastructure, CI/CD automation, and containerized deployments.','about-copy':'I build repeatable infrastructure with Terraform, automate software delivery, and use monitoring to help teams detect issues and release with confidence. My background in telecommunication systems brings a strong foundation in networks and connected platforms.','principle-automation':'Automate the repeatable','principle-observe':'Make systems observable','principle-reliable':'Design for reliability',
+            'section-stack':'STACK','stack-kicker':'TOOLS ARE ONLY PART OF THE SYSTEM','stack-title':'The toolchain,<br>declared.','stack-description':'A practical toolkit for building, securing, shipping, and observing cloud platforms.','stack-cloud':'Cloud platforms','stack-delivery':'CI/CD & GitOps','stack-runtime':'Containers & orchestration','stack-iac':'Infrastructure as Code','stack-observe':'Monitoring & observability','stack-systems':'Scripting & systems',
+            'section-projects':'PROJECTS','projects-kicker':'SELECTED BUILDS','projects-title':'From commit<br>to cloud.','projects-description':'A couple of practical projects where application delivery meets infrastructure and operations.','hourlog-description':'A production-oriented time-tracking application with PostgreSQL and role-based access control. Automated build and deployment with GitHub Actions; hosted on Linux behind NGINX.','open-project':'OPEN PROJECT','cloud-project-title':'Cloud infrastructure<br>& monitoring','cloud-project-description':'Deployed OpenStack resources, configured HAProxy and NGINX load balancing, and built Prometheus and Grafana dashboards. Used load testing and automated scaling to improve availability and resource utilization.','view-repository':'VIEW REPOSITORY',
+            'section-education':'EDUCATION','education-kicker':'FOUNDATIONS','education-title':'Learning that<br>connects systems.','msc-title':'Master’s in Telecommunication Systems','btech-title':'Bachelor’s in Electronics and Communication Engineering','credentials-label':'SELECTED CREDENTIALS','languages-label':'LANGUAGES',
+            'section-contact':'CONTACT','contact-kicker':'PING PRADEEP@CLOUD','contact-title':'Ready to build<br>something reliable?','contact-description':'Let’s talk about cloud infrastructure, automation, or making delivery more predictable.','contact-status':'OPEN TO A CONVERSATION','contact-button':'Start a conversation','footer-status':'BUILT WITH CARE · DEPLOYED WITH INTENT','back-top':'BACK TO TOP ↑'
         },
         sv: {
-            "nav-about": "Om mig",
-            "nav-skills": "Kompetenser",
-            "nav-projects": "Projekt",
-            "nav-education": "Utbildning",
-            "nav-contact": "Kontakt",
-            "hero-subtitle": "DevOps Engineer | Molningenjör",
-            "hero-desc": "Bygger tillförlitlig molninfrastruktur och automatiserade leveransflöden med AWS, Kubernetes och Infrastructure as Code.",
-            "hero-btn-projects": "Visa projekt",
-            "hero-btn-resume": "Ladda ner CV",
-            "about-title": "Om mig",
-            "about-p1": "Jag är DevOps- och molningenjör med fokus på AWS-infrastruktur, CI/CD-automatisering och containerbaserade driftsättningar. Jag bygger repeterbar infrastruktur med Terraform, automatiserar leveransflöden och övervakar molnsystem för tillförlitlighet.",
-            "about-interests-label": "Karriärintressen:",
-            "about-interests-list": "AWS, DevOps, CI/CD, Kubernetes, Infrastructure as Code och molntillförlitlighet.",
-            "skills-title": "Kompetenser & teknologier",
-            "skills-prog": "💻 Programmeringsspråk",
-            "skills-cloud": "☁️ Moln & DevOps",
-            "skills-monitoring": "🔍 Övervakning & Observerbarhet",
-
-            "projects-title": "Projekt",
-            "skills-deployment": "🚀 DevOps & CI/CD",
-            "btn-view-project": "Visa projekt",
-            "education-title": "Utbildning",
-            "edu-msc": "Masterexamen i telekommunikationssystem",
-            "edu-btech": "Kandidatexamen i elektronik och kommunikationsteknik",
-            "publication-title": "Publikationer",
-            "btn-show-pub": "Visa publikation",
-            "certification-title": "Certifieringar",
-            "btn-show-cert": "Visa certifikat",
-            "contact-title": "Kontakta mig",
-            "label-name": "Namn",
-            "label-email": "E-post",
-            "label-message": "Meddelande",
-            "ph-name": "Ditt namn",
-            "ph-email": "Din e-post",
-            "ph-message": "Ditt meddelande (max 1000 ord)",
-            "btn-send": "Skicka meddelande",
-            "btn-view-pub": "Visa publikation"
+            'skip-link':'Hoppa till innehåll','skip-intro':'Hoppa över intro','nav-about':'Om mig','nav-stack':'Teknik','nav-projects':'Projekt','nav-education':'Utbildning','nav-contact':'Kontakt','nav-lets-talk':'Kontakta mig',
+            'hero-eyebrow':'DEVOPS- OCH MOLNINGENJÖR','hero-greeting':'Tillförlitliga system.','hero-headline':'Trygga releaser.','hero-description':'Jag bygger molninfrastruktur och leveransflöden som gör programvarureleaser repeterbara, observerbara och säkra.','hero-projects':'Utforska projekt','hero-resume':'Ladda ner CV','hero-focus':'FOKUS','pipeline-message':'infrastruktur som kod · automatiserad leverans · aktiverad övervakning','scroll-story':'RULLA FÖR ATT UTFORSKA',
+            'section-about':'OM MIG','about-kicker':'VÄGEN TILL PRODUKTION','about-title':'Tillförlitlighet byggs<br>in i processen.','about-lead':'Jag är DevOps- och molningenjör med fokus på AWS-infrastruktur, CI/CD-automatisering och containerbaserade driftsättningar.','about-copy':'Jag bygger repeterbar infrastruktur med Terraform, automatiserar programvaruleveranser och använder övervakning för att upptäcka problem och skapa trygga releaser. Min bakgrund inom telekommunikationssystem ger en stark grund inom nätverk och uppkopplade plattformar.','principle-automation':'Automatisera det repetitiva','principle-observe':'Gör system observerbara','principle-reliable':'Bygg för tillförlitlighet',
+            'section-stack':'TEKNIK','stack-kicker':'VERKTYGEN ÄR EN DEL AV SYSTEMET','stack-title':'Verktygskedjan,<br>deklarerad.','stack-description':'Verktyg för att bygga, säkra, leverera och övervaka molnplattformar.','stack-cloud':'Molnplattformar','stack-delivery':'CI/CD och GitOps','stack-runtime':'Containrar och orkestrering','stack-iac':'Infrastruktur som kod','stack-observe':'Övervakning och observerbarhet','stack-systems':'Skript och system',
+            'section-projects':'PROJEKT','projects-kicker':'UTVALDA BYGGEN','projects-title':'Från commit<br>till molnet.','projects-description':'Praktiska projekt där applikationsleverans möter infrastruktur och drift.','hourlog-description':'En tidsrapporteringsapplikation med PostgreSQL och rollbaserad åtkomst. Automatiserat bygge och driftsättning med GitHub Actions; körs på Linux bakom NGINX.','open-project':'ÖPPNA PROJEKT','cloud-project-title':'Molninfrastruktur<br>och övervakning','cloud-project-description':'Driftsatte OpenStack-resurser, konfigurerade lastbalansering med HAProxy och NGINX och byggde instrumentpaneler i Prometheus och Grafana. Använde belastningstester och automatisk skalning för bättre tillgänglighet och resursutnyttjande.','view-repository':'VISA REPOSITORY',
+            'section-education':'UTBILDNING','education-kicker':'GRUND','education-title':'Kunskap som<br>kopplar samman system.','msc-title':'Masterexamen i telekommunikationssystem','btech-title':'Kandidatexamen i elektronik och kommunikationsteknik','credentials-label':'UTVALDA MERITER','languages-label':'SPRÅK',
+            'section-contact':'KONTAKT','contact-kicker':'PING PRADEEP@CLOUD','contact-title':'Ska vi bygga något<br>tillförlitligt?','contact-description':'Hör av dig om molninfrastruktur, automatisering eller hur leveranser kan bli mer förutsägbara.','contact-status':'ÖPPEN FÖR KONTAKT','contact-button':'Starta en konversation','footer-status':'BYGGT MED OMSORG · DRIFTSATT MED AVSIKT','back-top':'TILL TOPPEN ↑'
         }
     };
+    const store = {get(key){try{return localStorage.getItem(key)}catch{return null}},set(key,value){try{localStorage.setItem(key,value)}catch{}}};
 
-    const langBtns = document.querySelectorAll('.lang-btn');
-
-    // Function to switch language
-    const switchLanguage = (lang) => {
-        // Update Content
-        document.querySelectorAll('[data-lang]').forEach(el => {
-            const key = el.getAttribute('data-lang');
-            if (content[lang][key]) {
-                // If it's a button with an icon, we preserve the icon
-                if (el.querySelector('i')) {
-                    const icon = el.querySelector('i').outerHTML;
-                    // Replace only text content
-                    // We reconstruct the HTML to include the icon
-                    el.innerHTML = `${icon} ${content[lang][key]}`;
-                } else {
-                    // Regular text
-                    el.textContent = content[lang][key];
-                }
-            }
-        });
-
-        // Update Placeholders
-        document.querySelectorAll('[data-lang-placeholder]').forEach(el => {
-            const key = el.getAttribute('data-lang-placeholder');
-            if (content[lang][key]) {
-                el.placeholder = content[lang][key];
-            }
-        });
-
-        // Update Toggle Buttons UI
-        langBtns.forEach(btn => {
-            if (btn.getAttribute('data-lang-val') === lang) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
-
-        // Persist selection
-        storage.setItem('language', lang);
+    const finishBoot = () => {
+        if (!boot || boot.classList.contains('is-done')) return;
+        boot.classList.add('is-done');
+        window.setTimeout(() => boot.remove(), 800);
     };
+    if (boot && !reducedMotion) {
+        const messages = ['building asset bundle…','running quality checks…','provisioning cloud delivery…','release ready · welcome'];
+        const timers = [];
+        document.querySelectorAll('.pipeline-step').forEach((step,index) => timers.push(window.setTimeout(() => {
+            step.classList.add('is-done');
+            document.querySelector('.pipeline-track span').style.width = `${(index + 1) * 25}%`;
+            document.getElementById('boot-message').textContent = messages[index];
+            document.getElementById('boot-percent').textContent = `${[23,49,76,100][index]}%`;
+        }, 260 + index * 430)));
+        timers.push(window.setTimeout(finishBoot, 2300));
+        document.querySelector('.boot-skip').addEventListener('click', () => { timers.forEach(clearTimeout); finishBoot(); });
+        document.addEventListener('keydown', event => { if (event.key === 'Escape') { timers.forEach(clearTimeout); finishBoot(); } }, {once:true});
+    } else finishBoot();
 
-    // Initialize Language
-    const savedLang = storage.getItem('language') || 'en'; // Default to English
-    switchLanguage(savedLang);
-
-    // Event Listeners for Buttons
-    langBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.getAttribute('data-lang-val');
-            switchLanguage(lang);
+    const applyLanguage = lang => {
+        const dictionary = translations[lang] || translations.en;
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-lang]').forEach(element => {
+            if (dictionary[element.dataset.lang]) element.innerHTML = dictionary[element.dataset.lang];
         });
-    });
-
-    // --- Mobile Navigation Toggle ---
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-
-            // Optional: Toggle icon between hamburger and close
-            const icon = menuToggle.querySelector('i');
-            if (icon) {
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            }
-        });
-    }
-
-    // --- Close Mobile Menu on Link Click ---
-    const navItems = document.querySelectorAll('.nav-links a');
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                if (icon) {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            }
-        });
-    });
-
-    // --- Active Link Highlighting & Sticky Navbar Shadow ---
-    const sections = document.querySelectorAll('section, header#hero');
-    const navLinksItems = document.querySelectorAll('.nav-links a');
-    const navbar = document.querySelector('.navbar');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    const activeLinkObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const currentId = entry.target.getAttribute('id');
-                navLinksItems.forEach(item => {
-                    item.classList.remove('active');
-                    if (item.getAttribute('href') === `#${currentId}`) {
-                        item.classList.add('active');
-                    }
-                });
-            }
-        });
-    }, {
-        threshold: 0.3, // Trigger when 30% of section is visible
-        rootMargin: "-20% 0px -50% 0px" // Adjust for sticky header
-    });
-
-    sections.forEach(section => activeLinkObserver.observe(section));
-
-    // --- Scroll Fade-in Animation ---
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
+        document.querySelectorAll('.lang-btn').forEach(button => button.classList.toggle('active', button.dataset.langVal === lang));
+        store.set('portfolio-language',lang);
     };
+    applyLanguage(store.get('portfolio-language') || 'en');
+    document.querySelectorAll('.lang-btn').forEach(button => button.addEventListener('click',() => applyLanguage(button.dataset.langVal)));
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-up');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+    const themeButton = document.querySelector('.theme-toggle');
+    const setTheme = theme => {
+        body.classList.toggle('dark-mode',theme === 'dark');
+        themeButton.innerHTML = theme === 'dark' ? '<i class="fa-regular fa-sun"></i>' : '<i class="fa-regular fa-moon"></i>';
+        themeButton.setAttribute('aria-label',theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#101713' : '#f6f8f4';
+        store.set('portfolio-theme',theme);
+    };
+    setTheme(store.get('portfolio-theme') || 'light');
+    themeButton.addEventListener('click',() => setTheme(body.classList.contains('dark-mode') ? 'light' : 'dark'));
 
-    const animatedElements = document.querySelectorAll('.section-title, .skill-card, .project-card, .about-content p, .education-card');
-
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(el);
+    const menuButton = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.nav-menu');
+    const closeMenu = () => { menu.classList.remove('is-open'); menuButton.setAttribute('aria-expanded','false'); menuButton.setAttribute('aria-label','Open navigation'); menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>'; };
+    menuButton.addEventListener('click',() => {
+        const open = menu.classList.toggle('is-open');
+        menuButton.setAttribute('aria-expanded',String(open));
+        menuButton.setAttribute('aria-label',open ? 'Close navigation' : 'Open navigation');
+        menuButton.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
     });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click',closeMenu));
+    document.addEventListener('keydown',event => { if (event.key === 'Escape') closeMenu(); });
 
-    // Helper class for animation triggers
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .fade-in-up {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    `;
-    document.head.appendChild(style);
-
-    // --- Hero Name Scroll Transformation ---
-    const heroNameFull = document.querySelector('.hero-name-full');
-    const navbarLogo = document.querySelector('.logo');
-
-    if (heroNameFull && navbarLogo) {
-        navbarLogo.style.opacity = '0';
-
-        let startRect, endRect;
-
-        function updatePositions() {
-            heroNameFull.style.transform = 'none';
-            navbarLogo.style.opacity = '1';
-
-            const scroll = window.scrollY;
-            const r1 = heroNameFull.getBoundingClientRect();
-            const r2 = navbarLogo.getBoundingClientRect();
-
-            startRect = {
-                top: r1.top + scroll,
-                left: r1.left,
-                width: r1.width,
-                fontSize: parseFloat(window.getComputedStyle(heroNameFull).fontSize)
-            };
-
-            endRect = {
-                top: r2.top + scroll,
-                left: r2.left,
-                fontSize: parseFloat(window.getComputedStyle(navbarLogo).fontSize)
-            };
-
-            // Reset
-            navbarLogo.style.opacity = '0';
-        }
-
-        window.addEventListener('load', updatePositions);
-        window.addEventListener('resize', updatePositions);
-
-        window.addEventListener('scroll', () => {
-            if (!startRect || !endRect) return;
-
-            const scrollY = window.scrollY;
-            const animationDistance = 300;
-            let progress = Math.min(scrollY / animationDistance, 1);
-
-            if (progress >= 1) {
-                heroNameFull.style.opacity = '0';
-                navbarLogo.style.opacity = '1';
-                heroNameFull.style.transform = `none`;
-                return;
-            }
-
-            heroNameFull.style.opacity = '1';
-            navbarLogo.style.opacity = '0';
-
-            const currentLogoRect = navbarLogo.getBoundingClientRect();
-
-            const currentHeroY = startRect.top - scrollY;
-            const currentHeroX = startRect.left;
-
-            const targetX = currentLogoRect.left;
-            const targetY = currentLogoRect.top;
-
-            const deltaX = targetX - currentHeroX;
-            const deltaY = targetY - currentHeroY;
-
-            const scale = startRect.fontSize ? endRect.fontSize / startRect.fontSize : 0.5;
-            const currentScale = 1 + (scale - 1) * progress;
-
-            const currentDeltaX = deltaX * progress;
-            const currentDeltaY = deltaY * progress;
-
-            heroNameFull.style.transformOrigin = '0 0';
-            heroNameFull.style.transform = `translate(${currentDeltaX}px, ${currentDeltaY}px) scale(${currentScale})`;
-        });
-    }
-
-    // --- Contact Form Handler (Formspree AJAX) ---
-    const contactForm = document.getElementById('contact-form');
-    const contactStatus = document.getElementById('contact-status');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            // Get form data
-            const formData = new FormData(contactForm);
-
-            // UI Feedback: Disable button to prevent double submits
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitButton.innerText;
-            submitButton.disabled = true;
-            submitButton.innerText = 'Sending...';
-
-            // Reset status
-            contactStatus.style.display = 'none';
-            contactStatus.className = 'contact-status'; // Reset classes
-
-            try {
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    // Success
-                    contactStatus.innerText = "Thank you! I'll get back to you soon.";
-                    contactStatus.classList.add('success');
-                    contactStatus.style.display = 'block'; // Force display
-                    contactForm.reset(); // Clear form
-                } else {
-                    // Error from server
-                    const data = await response.json();
-                    if (Object.hasOwn(data, 'errors')) {
-                        contactStatus.innerText = data.errors.map(error => error.message).join(", ");
-                    } else {
-                        contactStatus.innerText = "Oops! There was a problem sending your message.";
-                    }
-                    contactStatus.classList.add('error');
-                    contactStatus.style.display = 'block'; // Force display
-                }
-            } catch (error) {
-                // Network error
-                contactStatus.innerText = "Oops! There was a network problem. Please try again later.";
-                contactStatus.classList.add('error');
-                contactStatus.style.display = 'block'; // Force display
-            } finally {
-                // Re-enable button
-                submitButton.disabled = false;
-                submitButton.innerText = originalBtnText;
-            }
-        });
-    }
-
-    // --- DARK MODE TOGGLE ---
-    const themeToggle = document.querySelector('.theme-toggle');
-    const body = document.body;
-
-    if (themeToggle) {
-        const icon = themeToggle.querySelector('i');
-
-        // Check Local Storage or System Preference
-        const savedTheme = storage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-            body.classList.add('dark-mode');
-            if (icon) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            }
-        }
-
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-
-            // Update Icon & Save
-            if (body.classList.contains('dark-mode')) {
-                if (icon) {
-                    icon.classList.remove('fa-moon');
-                    icon.classList.add('fa-sun');
-                }
-                storage.setItem('theme', 'dark');
-            } else {
-                if (icon) {
-                    icon.classList.remove('fa-sun');
-                    icon.classList.add('fa-moon');
-                }
-                storage.setItem('theme', 'light');
-            }
-        });
-    }
+    const progress = document.querySelector('.scroll-progress span');
+    const updateProgress = () => { const max = document.documentElement.scrollHeight - window.innerHeight; progress.style.width = `${max > 0 ? window.scrollY / max * 100 : 0}%`; };
+    window.addEventListener('scroll',updateProgress,{passive:true}); updateProgress();
+    const revealTargets = document.querySelectorAll('.section-label,.hero-copy,.deploy-card,.stack-card,.project-card,.education-item,.credentials-row,.contact-main,.contact-side');
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); } }),{threshold:.12});
+        revealTargets.forEach(element => { element.classList.add('reveal'); revealObserver.observe(element); });
+        const sectionObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            document.querySelectorAll('.nav-menu a').forEach(link => link.classList.toggle('is-active',link.getAttribute('href') === `#${entry.target.id}`));
+        }),{rootMargin:'-25% 0px -62% 0px'});
+        document.querySelectorAll('main section[id]').forEach(section => sectionObserver.observe(section));
+    } else revealTargets.forEach(element => element.classList.add('is-visible'));
+    document.getElementById('year').textContent = new Date().getFullYear();
 });

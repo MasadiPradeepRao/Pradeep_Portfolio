@@ -1,6 +1,6 @@
 # 🌟 Pradeep Rao Masadi - Portfolio Website
 
-A modern, responsive portfolio website showcasing my work as a Telecommunication Systems graduate with expertise in cloud technologies, full-stack development, and embedded systems.
+A modern, responsive portfolio website showcasing my work as a DevOps and Cloud Engineer focused on AWS, CI/CD automation, and infrastructure as code.
 
 ## 🔗 Live Demo-(https://masadipradeeprao.github.io/Pradeep_Portfolio/)
 
@@ -14,7 +14,7 @@ A modern, responsive portfolio website showcasing my work as a Telecommunication
 - Contact Form: Integrated Formspree contact form with AJAX submission
 - Project Showcase: Highlighted projects with links to publications and GitHub repositories
 - Skills Display: Organized skill categories with technology icons
-- Professional Timeline: Experience and education timeline layout
+- Education and Languages: Academic background and language proficiency
 
 ## 🛠️ Technologies Used
 
@@ -41,9 +41,9 @@ portfolio/
 ├── assets/
 │   ├── images/
 │   │   ├── profile.png    # Profile photo
-│   │   ├── flag-en.png    # English(Britain) flag icon
+│   │   ├── flag-en.png    # English flag icon
 │   │   ├── flag-sv.png    # Swedish flag icon
-│   │   └── PRADEEP_CV.pdf # Resume/CV file
+│   │   └── PRADEEP_CV.pdf # Current resume
 └── README.md              # Project documentation
 ```
 
@@ -103,7 +103,6 @@ portfolio/
 ```
 
 **Skills**: Update skill tags in the skills section
-**Experience**: Modify timeline items in the experience section
 **Education**: Update education cards with your credentials
 
 ### Changing Colors

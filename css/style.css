@@ -77,3 +77,37 @@
 .contact-status,.contact-signoff{font-size:10px}
 .footer-inner>span,.back-top{font-size:9px}
 @media(max-width:720px){.nav-menu a{font-size:13px}.education-item h3{font-size:14px}.education-item .mono-label{font-size:9px}.footer-inner>span:not(.footer-built),.back-top{font-size:8px}}
+
+/* Smooth page feedback */
+.scroll-progress span{width:100%;transform:scaleX(0);transform-origin:left center;transition:transform .12s linear;will-change:transform}
+.reveal{transform:translate3d(0,20px,0);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
+.reveal.is-visible{transform:translate3d(0,0,0)}
+.profile-card{transform:perspective(1000px) rotateX(var(--card-tilt-x,0deg)) rotateY(var(--card-tilt-y,0deg)) translateY(0);transform-style:preserve-3d;transition:transform .38s cubic-bezier(.2,.75,.25,1),box-shadow .38s ease}
+.profile-card:hover{box-shadow:0 24px 58px rgba(20,44,30,.13)}
+.cursor-orb{position:fixed;z-index:200;top:0;left:0;width:26px;height:26px;border:1px solid color-mix(in srgb,var(--accent) 58%,transparent);border-radius:50%;pointer-events:none;opacity:.68;transition:width .22s ease,height .22s ease,margin .22s ease,background .22s ease,border-color .22s ease,opacity .22s ease;will-change:transform}
+.cursor-orb.is-over-interactive{width:42px;height:42px;margin:-8px;border-color:var(--accent);background:color-mix(in srgb,var(--accent-soft) 46%,transparent);opacity:.8}
+@media(hover:none),(pointer:coarse){.cursor-orb{display:none}}
+@media(prefers-reduced-motion:reduce){.cursor-orb{display:none}.profile-card{transform:none!important}}
+
+/* Rounded corners carried consistently across portfolio cards. */
+.education-list{display:grid;gap:12px;border:0}
+.education-item{padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--paper)}
+.education-mark,.stack-icon,.credential-icon{border-radius:11px}
+.stack-card,.project-card{border-radius:14px}
+.project-art,.stack-terminal{overflow:hidden;border-radius:12px}
+.deploy-card{border-radius:12px}
+.deploy-log,.art-window,.cloud-services span{border-radius:8px}
+.project-tags span{border-radius:999px}
+.button,.contact-mail-button{border-radius:9px}
+@media(max-width:720px){.education-item{padding:16px 14px}}
+
+/* Sticky header gently gains a light glass blur as it settles on scroll. */
+.site-header{background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);transition:height .45s cubic-bezier(.22,1,.36,1),background-color .35s ease,backdrop-filter .35s ease,box-shadow .35s ease,border-color .35s ease}
+.site-header.is-scrolled{background:color-mix(in srgb,var(--bg) 74%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 8px 25px rgba(20,44,30,.07)}
+
+/* Put the full desktop navigation inside one floating glass capsule. */
+.site-header{top:10px;height:76px;padding:6px 0;background:transparent;border:0;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
+.site-header.is-scrolled{height:70px;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
+.nav-shell{position:relative;width:min(1120px,calc(100% - 64px));height:62px;padding:0 16px;border:1px solid color-mix(in srgb,var(--line) 88%,transparent);border-radius:999px;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 7px 28px rgba(24,48,34,.09);transition:height .38s cubic-bezier(.22,1,.36,1),background-color .3s ease,box-shadow .3s ease,border-color .3s ease}
+.site-header.is-scrolled .nav-shell{height:58px;background:color-mix(in srgb,var(--bg) 70%,transparent);border-color:color-mix(in srgb,var(--line) 74%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 32px rgba(24,48,34,.12)}
+@media(max-width:720px){.site-header{top:6px;height:66px;padding:4px 0}.site-header.is-scrolled{height:62px}.nav-shell{width:calc(100% - 32px);height:56px;padding:0 12px;border-radius:999px}.site-header.is-scrolled .nav-shell{height:54px}.nav-menu{top:calc(100% + 8px);left:0;right:0;padding:7px 16px 14px;border:1px solid var(--line);border-radius:18px;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 12px 30px rgba(24,48,34,.12)}}

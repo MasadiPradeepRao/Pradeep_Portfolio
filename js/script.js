@@ -79,12 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown',event => { if (event.key === 'Escape') closeMenu(); });
 
     const progress = document.querySelector('.scroll-progress span');
-    const updateProgress = () => { const max = document.documentElement.scrollHeight - window.innerHeight; progress.style.width = `${max > 0 ? window.scrollY / max * 100 : 0}%`; };
+    const updateProgress = () => { const max = document.documentElement.scrollHeight - window.innerHeight; progress.style.transform = `scaleX(${max > 0 ? Math.max(0,Math.min(1,window.scrollY / max)) : 0})`; };
     window.addEventListener('scroll',updateProgress,{passive:true}); updateProgress();
     const revealTargets = document.querySelectorAll('.section-label,.hero-copy,.deploy-card,.stack-card,.project-card,.education-item,.credentials-row,.contact-main,.contact-side');
     if ('IntersectionObserver' in window) {
-        const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); } }),{threshold:.12});
-        revealTargets.forEach(element => { element.classList.add('reveal'); revealObserver.observe(element); });
+        const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => entry.target.classList.toggle('is-visible',entry.isIntersecting)),{threshold:.12});
+        revealTargets.forEach((element,index) => { element.style.setProperty('--reveal-delay',`${(index % 4) * 65}ms`); element.classList.add('reveal'); revealObserver.observe(element); });
         const sectionObserver = new IntersectionObserver(entries => entries.forEach(entry => {
             if (!entry.isIntersecting) return;
             document.querySelectorAll('.nav-menu a').forEach(link => link.classList.toggle('is-active',link.getAttribute('href') === `#${entry.target.id}`));
@@ -159,6 +159,51 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll',scheduleHeaderTransition,{passive:true});
     window.addEventListener('resize',scheduleHeaderTransition);
     updateHeaderTransition();
+
+    const profileCard = document.querySelector('.profile-card');
+    if (profileCard && !reducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        let cardFrame = false;
+        profileCard.addEventListener('pointermove',event => {
+            if (cardFrame) return;
+            cardFrame = true;
+            requestAnimationFrame(() => {
+                const bounds = profileCard.getBoundingClientRect();
+                const x = (event.clientX - bounds.left) / bounds.width - .5;
+                const y = (event.clientY - bounds.top) / bounds.height - .5;
+                profileCard.style.setProperty('--card-tilt-x',`${-y * 2.4}deg`);
+                profileCard.style.setProperty('--card-tilt-y',`${x * 2.4}deg`);
+                cardFrame = false;
+            });
+        });
+        profileCard.addEventListener('pointerleave',() => {
+            profileCard.style.setProperty('--card-tilt-x','0deg');
+            profileCard.style.setProperty('--card-tilt-y','0deg');
+        });
+    }
+
+    if (!reducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        const cursorOrb = document.createElement('span');
+        cursorOrb.className = 'cursor-orb';
+        cursorOrb.setAttribute('aria-hidden','true');
+        body.appendChild(cursorOrb);
+        let cursorFrame = false;
+        document.addEventListener('pointermove',event => {
+            if (cursorFrame) return;
+            cursorFrame = true;
+            requestAnimationFrame(() => {
+                cursorOrb.style.transform = `translate3d(${event.clientX}px,${event.clientY}px,0) translate(-50%,-50%)`;
+                cursorFrame = false;
+            });
+        },{passive:true});
+        document.querySelectorAll('a,button,.profile-card').forEach(element => {
+            element.addEventListener('pointerenter',() => cursorOrb.classList.add('is-over-interactive'));
+            element.addEventListener('pointerleave',() => cursorOrb.classList.remove('is-over-interactive'));
+        });
+    }
+
+    document.querySelectorAll('.nav-menu a,.theme-toggle,.lang-btn,.menu-toggle,.hero-actions .button,.back-top').forEach(control => {
+        control.addEventListener('click',() => { if (navigator.vibrate) navigator.vibrate(8); });
+    });
 
     document.getElementById('year').textContent = new Date().getFullYear();
 });
